@@ -10,6 +10,7 @@ builder.Services.AddDbContext<QuizContext>(opt =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.WebHost.UseUrls("http://*:5222");
 
 var app = builder.Build();
 
