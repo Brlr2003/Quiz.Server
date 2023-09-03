@@ -9,7 +9,7 @@ using Quiz.Api.Models;
 
 namespace Quiz.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Answers")]
     [ApiController]
     public class AnswersController : ControllerBase
     {
@@ -92,7 +92,7 @@ namespace Quiz.Api.Controllers
             _context.Answers.Add(answer);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetAnswer", new { id = answer.Id }, answer);
+            return CreatedAtAction(nameof(GetAnswer), new { id = answer.Id }, answer);
         }
 
         // DELETE: api/Answers/5
